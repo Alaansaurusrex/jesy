@@ -14,7 +14,7 @@ searchBtn.addEventListener("click", async () => {
 
     try {
         const response_geocode = await fetch(
-            `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`
+            `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`
         );
         const geocodeData = await response_geocode.json();
         const { lat, lon } = geocodeData[0];
@@ -70,4 +70,5 @@ searchBtn.addEventListener("click", async () => {
 // Permitir buscar con la tecla "Enter"
 cityInput.addEventListener("keypress", (e) => {
     if (e.key === "Enter") searchBtn.click();
+
 });
